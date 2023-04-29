@@ -1,12 +1,9 @@
 import {
   StyleSheet,
   Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
+  View
 } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import React, { useState } from "react";
+import React from "react";
 import theme from "../../../styles/theme.style";
 import BlurredPopup from "./BlurredPopup";
 

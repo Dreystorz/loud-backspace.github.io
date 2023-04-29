@@ -58,7 +58,7 @@ export default function App() {
   async function retrieveUserSession() {
     let result = await SecureStore.getItemAsync("userToken");
     if (result) {
-      await fetch("http://" + ip.myIp + ":3000/auth/isLoggedIn", {
+      await fetch(process.env.BACKEND_IP_PORT+"/auth/isLoggedIn", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -67,7 +67,7 @@ export default function App() {
         body: JSON.stringify({
           token: result,
         }),
-        https: false, // Set the https option to true
+        https: process.env.HTTP, // Set the https option to true
       })
         .then((response) => response.json())
         .then((data) => (valid = data.isLoggedIn))
@@ -90,13 +90,13 @@ export default function App() {
 
   async function retrieveUserWebSession() {
     console.log("Retrieving Session");
-    await fetch("http://" + ip.myIp + ":3000/auth/isLoggedIn", {
+    await fetch(process.env.BACKEND_IP_PORT+"/auth/isLoggedIn", {
       method: "POST",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      https: false, // Set the https option to true
+      https: process.env.HTTP, // Set the https option to true
     })
       .then((response) => response.json())
       .then((data) => setLoginState(data.isLoggedIn))

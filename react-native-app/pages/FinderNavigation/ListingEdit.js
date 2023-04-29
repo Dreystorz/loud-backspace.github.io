@@ -4,8 +4,7 @@ import {
   Button,
   StyleSheet,
   SafeAreaView,
-  StatusBar,
-  Text
+  StatusBar
 } from "react-native";
 import { AuthContext } from "../../context";
 import theme from '../../styles/theme.style'
@@ -28,7 +27,7 @@ const ListingEdit = ({ route, navigation }) => {
 
   const SubmitListing = async () => {
     try {
-      const response = await fetch("http://" + myIp + ":3000/listings/edit", {
+      const response = await fetch(process.env.BACKEND_IP_PORT+"/listings/edit", {
         method: "POST",
         credentials: "include",
         headers: {

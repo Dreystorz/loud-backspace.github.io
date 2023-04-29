@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import { View, Text, StyleSheet} from 'react-native';
 import React, { useState, useEffect, useContext  } from "react";
 import { AuthContext } from "../context";
 
@@ -14,7 +13,7 @@ function QueryTester(props) {
 	
 	
 	const endpoint = props.endpoint
-	const api_address = "http://" + myIp + ":3000"+endpoint
+	const api_address = process.env.BACKEND_IP_PORT+endpoint
 	
 	useEffect(() => { 
 		
@@ -28,6 +27,7 @@ function QueryTester(props) {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(merged_object),
+				https: false
 			})
 			.then(response => {
 				console.log(response);

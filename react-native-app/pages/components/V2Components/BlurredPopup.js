@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, TouchableOpacity, Platform, useWindowDimensions} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { BlurView } from 'expo-blur';
 import { Appearance } from "react-native";
@@ -8,7 +8,6 @@ import theme from '../../../styles/theme.style'
 import { SafeAreaView } from 'react-navigation';
 
 export default function BlurredPopup(props){
-    const {width} = useWindowDimensions()
     const isWeb = Platform.OS ==='web'
     return (
         <SafeAreaView>

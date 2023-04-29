@@ -34,7 +34,7 @@ function LoginScreen({navigation}) {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch('http://'+myIp+':3000/auth/login', {
+      const res = await fetch(process.env.BACKEND_IP_PORT+'/auth/login', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -45,7 +45,7 @@ function LoginScreen({navigation}) {
         password: password,
         isMobile: isWeb ? false : true
       }),
-        https: false,
+        https: process.env.HTTP,
       });
       const data = await res.json();
       if(res.status == 200){

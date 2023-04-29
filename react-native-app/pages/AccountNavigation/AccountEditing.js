@@ -33,7 +33,7 @@ const AccountInformation = () => {
   const isWeb = Platform.OS === "web";
 
   useEffect(() => {
-    const userData = fetch("http://" + myIp + ":3000/get/user", {
+    const userData = fetch(process.env.BACKEND_IP_PORT+"/get/user", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -42,6 +42,7 @@ const AccountInformation = () => {
       body: JSON.stringify({
         token: token,
       }),
+      https: false
     })
       .then((response) => response.json())
       .then((data) => {
@@ -76,7 +77,7 @@ const AccountInformation = () => {
       deleteToken("userToken");
       signIn(false);
     } else {
-      fetch("http://" + myIp + ":3000/auth/logout", {
+      fetch(process.env.BACKEND_IP_PORT+"/auth/logout", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -103,7 +104,7 @@ const AccountInformation = () => {
     // Add more validation checks
 
     try {
-      const response = await fetch("http://" + myIp + ":3000/update/user", {
+      const response = await fetch(process.env.BACKEND_IP_PORT+"/update/user", {
         method: "PATCH",
         credentials: "include",
         headers: {
@@ -116,7 +117,9 @@ const AccountInformation = () => {
           token: token,
           desc: desc,
           gender: gender,
+          zip_code: zipCode
         }),
+        https: false
       });
 
       const result = await response.json();
@@ -248,7 +251,7 @@ const AccountInformation = () => {
           <InputField
             style={styles.input}
             value={zipCode}
-            onChangeText={zipCode}
+            onChangeText={setZipCode}
             placeholder="ZIP Code"
           />
           {

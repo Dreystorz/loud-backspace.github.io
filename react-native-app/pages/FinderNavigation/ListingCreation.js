@@ -2,10 +2,7 @@ import React, { useState, useContext } from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
-  SafeAreaView,
-  StatusBar,
   useWindowDimensions,
 } from "react-native";
 import { AuthContext } from "../../context";
@@ -38,7 +35,7 @@ const ListingCreation = ({ navigation }) => {
 
   const SubmitListing = async () => {
     try {
-      const response = await fetch("http://" + myIp + ":3000/listings/add", {
+      const response = await fetch(process.env.BACKEND_IP_PORT+"/listings/add", {
         method: "POST",
         credentials: "include",
         headers: {

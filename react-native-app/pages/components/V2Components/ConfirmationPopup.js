@@ -6,7 +6,7 @@ import {
     Platform,
     TouchableOpacity
   } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import theme from '../../../styles/theme.style';
 import BlurredPopup from './BlurredPopup';
 

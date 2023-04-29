@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, useWindowDimensions } from 'react-native';
+import { View } from 'react-native';
 
 /**
 
@@ -7,7 +7,6 @@ The content area is a wrapped row of content that
 
 */
 export default function ContentAreaHeaderBar(props){
-	const {height, width} = useWindowDimensions();
 	
 	return (
 		<View style={

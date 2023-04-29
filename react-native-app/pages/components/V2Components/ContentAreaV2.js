@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, useWindowDimensions } from 'react-native';
+import { View } from 'react-native';
 
 /**
 
@@ -7,7 +7,6 @@ The content area is a column of content that
 
 */
 export default function ContentArea(props){
-	const {height, width} = useWindowDimensions();
 	
 	return (
 		<View style={

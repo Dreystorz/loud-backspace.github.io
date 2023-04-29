@@ -13,7 +13,6 @@ import InputField from "../components/V2Components/InputField";
 import { AuthContext } from "../../context";
 import theme from '.././../styles/theme.style'
 import IconedTitle from "../components/V2Components/IconedTitle";
-import ContentArea from '../components/V2Components/ContentAreaV2';
 import ContentAreaHeaderBar from '../components/V2Components/ContentAreaHeaderBar';
 import ListingPopup from "../components/V2Components/ListingPopup";
 import { useFocusEffect } from "@react-navigation/native";
@@ -130,7 +129,7 @@ export default function FinderScreen({ navigation }) {
 
   const SearchListings = async () => {
     try {
-      const response = await fetch("http://" + myIp + ":3000/listings/search", {
+      const response = await fetch(process.env.BACKEND_IP_PORT+"/listings/search", {
         method: "POST",
         credentials: "include",
         headers: {

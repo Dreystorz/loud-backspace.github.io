@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import React, { useState, useEffect, useContext  } from "react";
 import { AuthContext } from "../../context";
 
-import theme from '../../styles/theme.style';
 import QueryTester from '../QueryTester';
 
 
