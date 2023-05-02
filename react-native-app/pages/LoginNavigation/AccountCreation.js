@@ -53,6 +53,7 @@ const AccountCreation = () => {
       setToken(token);
       signIn(true);
     } else {
+      setToken(token);
       signIn(true);
     }
   };

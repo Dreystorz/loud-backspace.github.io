@@ -72,6 +72,7 @@ function LoginScreen({navigation}) {
       setToken(token);
       signIn(true);
     }else{
+      setToken(token);
       signIn(true);
     }
   };
