@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
   if(!isMobile){
     res.cookie('token', token, {
       httpOnly: true,
-      secure: true,
+      secure: false,
       sameSite: 'none',
     }).json({ token });
   }
@@ -112,7 +112,7 @@ router.post('/signup', async (req, res) => {
   if(!isMobile){
     res.cookie('token', token, {
       httpOnly: true,
-      secure: true,
+      secure: false,
       sameSite: 'none',
     }).json({ token });
   }
