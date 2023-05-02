@@ -51,6 +51,12 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://phenomenal-jalebi-365be1.netlify.app');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 //Routes
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
