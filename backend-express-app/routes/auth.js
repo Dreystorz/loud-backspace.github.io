@@ -38,6 +38,7 @@ router.post('/login', async (req, res) => {
       httpOnly: true,
       secure: false,
       sameSite: 'none',
+      domain: '.onrender.com'
     }).json({ token });
   }
   // Send the token in the response body if the request is coming from a mobile app
@@ -114,6 +115,7 @@ router.post('/signup', async (req, res) => {
       httpOnly: true,
       secure: false,
       sameSite: 'none',
+      domain: '.onrender.com'
     }).json({ token });
   }
   
