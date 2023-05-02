@@ -59,6 +59,9 @@ app.use("/get", getUserRouter);
 app.use("/listings", listingsRouter);
 app.use("/household", householdRouter);
 app.use("/reminders", reminderRouter);
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
