@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 var corsOptions = {
-  origin: process.env.IP.split(','),
+  origin: ["http://localhost:19006", process.env.IP],
   credentials: true,
 };
 app.use(cors(corsOptions));
