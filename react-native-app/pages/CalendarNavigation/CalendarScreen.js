@@ -58,7 +58,7 @@ function CalendarScreen() {
           dueDate: dueDate,
           token: token,
         }),
-        https: false,
+        https: process.env.HTTP,
       });
       const result = await response.json();
       if (response.status == 200) {
@@ -90,7 +90,7 @@ function CalendarScreen() {
                 token: token,
                 selectedDay: selectedDay
               }),
-             https: false,
+             https: process.env.HTTP,
             }
           );
           const data = await res.json();

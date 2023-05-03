@@ -115,7 +115,7 @@ function DashBoardScreen() {
           body: JSON.stringify({
             token: token,
           }),
-          https: false,
+          https: process.env.HTTP,
         }
       );
       const data = await res.json();
@@ -148,7 +148,7 @@ function DashBoardScreen() {
           body: JSON.stringify({
             token: token,
           }),
-          https: false,
+          https: process.env.HTTP,
         }
       );
       const data = await res.json();
@@ -183,7 +183,7 @@ function DashBoardScreen() {
           body: JSON.stringify({
             token: token,
           }),
-          https: false,
+          https: process.env.HTTP,
         }
       );
       const data = await res.json();
@@ -215,7 +215,7 @@ function DashBoardScreen() {
             name: householdName,
             token: token,
           }),
-          https: false, // Set the https option to true
+          https: process.env.HTTP, // Set the https option to true
         }
       );
       const data = await response.json();
@@ -241,7 +241,7 @@ function DashBoardScreen() {
         body: JSON.stringify({
         token: token,
         }),
-        https: false, // Set the https option to true
+        https: process.env.HTTP, // Set the https option to true
       }
     );
     const data = await response.json();
@@ -266,7 +266,7 @@ function DashBoardScreen() {
 				addCode: inputAddCode.replace(/-/g,'').toLowerCase(),
 				token: token,
 			  }),
-			  https: false, // Set the https option to true
+			  https: process.env.HTTP, // Set the https option to true
 			});
 			const data = await response.json();
 			if (response.status == 200) {
@@ -291,7 +291,7 @@ function DashBoardScreen() {
           listing_id: listingDel || id,
           token: token,
         }),
-        https: false, // Set the https option to true
+        https: process.env.HTTP, // Set the https option to true
       });
       if (response.status == 200) {
         getListings()
@@ -319,7 +319,7 @@ function DashBoardScreen() {
             reminder_id: reminderDel || id,
             token: token,
           }),
-          https: false, // Set the https option to true
+          https: process.env.HTTP, // Set the https option to true
         }
       );
       if (response.status == 200) {
@@ -347,7 +347,7 @@ function DashBoardScreen() {
           body: JSON.stringify({
             token: token,
           }),
-          https: false, // Set the https option to true
+          https: process.env.HTTP, // Set the https option to true
         }
       );
       if (response.status == 200) {

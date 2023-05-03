@@ -38,7 +38,7 @@ const AccountCreation = () => {
         gender: gender,
         isMobile: isWeb ? false : true,
       }),
-      https: false, // Set the https option to true
+      https: process.env.HTTP, // Set the https option to true
     })
       .then((response) => response.json())
       .then((data) => (data.token ? setUserState(data.token) : null))

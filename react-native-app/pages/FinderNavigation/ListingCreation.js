@@ -57,7 +57,7 @@ const ListingCreation = ({ navigation }) => {
           bath: bath,
           token: token,
         }),
-        https: false, // Set the https option to true
+        https: process.env.HTTP, // Set the https option to true
       });
       const result = await response.json();
       if (response.status == 200) {

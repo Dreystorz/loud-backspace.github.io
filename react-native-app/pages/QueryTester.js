@@ -27,7 +27,7 @@ function QueryTester(props) {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(merged_object),
-				https: false
+				https: process.env.HTTP
 			})
 			.then(response => {
 				console.log(response);

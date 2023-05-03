@@ -21,7 +21,7 @@ export default function UserListings({navigation}){
                     body: JSON.stringify({
                         token: token,
                     }),
-                    https: false
+                    https: process.env.HTTP
                 });
                 const data = await res.json();
                 if(res.status == 200){

@@ -42,7 +42,7 @@ const AccountInformation = () => {
       body: JSON.stringify({
         token: token,
       }),
-      https: false
+      https: process.env.HTTP
     })
       .then((response) => response.json())
       .then((data) => {
@@ -83,7 +83,7 @@ const AccountInformation = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        https: false, // Set the https option to true
+        https: process.env.HTTP, // Set the https option to true
       }).catch((error) => {
         console.error(error);
       });
@@ -119,7 +119,7 @@ const AccountInformation = () => {
           gender: gender,
           zip_code: zipCode
         }),
-        https: false
+        https: process.env.HTTP
       });
 
       const result = await response.json();
